@@ -1,0 +1,23 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "rules": {
+        // 0 -> "off", 1 -> "warn", 2 -> "error"
+        "no-console": 2,
+        "max-len": [
+            2,
+            {
+                "code": 120,
+                "comments": 65
+            }
+        ]
+    }
+}
