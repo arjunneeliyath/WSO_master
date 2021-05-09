@@ -16,8 +16,9 @@
             2,
             {
                 "code": 120,
-                "comments": 65
+                "comments": 100
             }
-        ]
+        ],
+        "no-trailing-spaces": 2
     }
 }
