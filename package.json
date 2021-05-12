@@ -29,13 +29,18 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run prettier:check"
+      "pre-commit": "lint-staged"
     }
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ]
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx,css,html}": [
+      "npm run prettier:check"
     ]
   },
   "browserslist": {
