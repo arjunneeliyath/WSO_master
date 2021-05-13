@@ -11,13 +11,13 @@ export const route_path = {
 
 const routeProps = [
     {
-        title: "Home",
+        title: 'Home',
         path: route_path.home.index,
         component: lazy(() => import('../pages/home')),
         exact: true,
     },
     {
-        title: "Demo",
+        title: 'Demo',
         path: route_path.demo.index,
         component: lazy(() => import('../pages/demo')),
         exact: true,

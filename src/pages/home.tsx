@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import '../App.css';
 
 const Home = (): ReactElement => (
@@ -7,5 +7,5 @@ const Home = (): ReactElement => (
       <h1>Welcome WSO Home Page</h1>
     </header>
   </div>
-)
+);
 export default Home;

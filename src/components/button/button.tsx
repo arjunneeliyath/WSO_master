@@ -1,3 +1,4 @@
+import React from 'react';
 import './styles.css';
 
 interface IButtonProps {
@@ -9,6 +10,6 @@ interface IButtonProps {
 const Button: React.FunctionComponent<IButtonProps> = (props: IButtonProps) =>
 	<div className='Button-Background'>
 		<button {...props}>{props.value}</button>
-	</div>
+	</div>;
 
 export default Button;

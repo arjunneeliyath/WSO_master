@@ -1,8 +1,8 @@
 import React, { ReactElement, Suspense } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import routeProps, { route_path } from '../constants/routes'
+import routeProps, { route_path } from '../constants/routes';
 
-export default (): ReactElement => {
+const routes = (): ReactElement => {
     return (
         <Suspense fallback={<div>...Loading</div>}>
             <Switch>
@@ -14,5 +14,8 @@ export default (): ReactElement => {
                 </>
             </Switch>
         </Suspense>
-    )
+    );
 };
+
+export default routes;
+
