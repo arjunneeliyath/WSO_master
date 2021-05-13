@@ -1,27 +1,27 @@
-import { fireEvent, render } from '@testing-library/react';
+import React, { fireEvent, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Demo from './demo';
 
 const inputSetup = () => {
-    const utils = render(<Demo />)
+    const utils = render(<Demo />);
     const input = utils.getByTestId('input-id');
     const btn = utils.getByTestId('button-id');
     return {
         input,
         btn,
         ...utils
-    }
-}
+    };
+};
 
-it("checkButtonAndInputRender", () => {
+it('checkButtonAndInputRender', () => {
     const { input, btn } = inputSetup();
     expect(input).toBeFalsy();
     expect(btn).toBeTruthy();
 });
 
-test("onButtonClick", () => {
+test('onButtonClick', () => {
     const { input, btn } = inputSetup();
-    userEvent.type(input, "WSO");
+    userEvent.type(input, 'WSO');
     fireEvent.click(btn);
     expect(input.value).toBe('');
 });

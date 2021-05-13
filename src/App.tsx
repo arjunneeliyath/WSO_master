@@ -1,7 +1,7 @@
-import { ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import './App.css';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Routes from './routes/routes'
+import Routes from './routes/routes';
 
 const App = (): ReactElement => (
   <div className="App">
@@ -11,5 +11,5 @@ const App = (): ReactElement => (
       </Router>
     </header>
   </div>
-)
+);
 export default App;
