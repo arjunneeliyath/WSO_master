@@ -27,6 +27,15 @@
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "no-console": 2,
+        "max-len": [
+            2,
+            {
+                "code": 120,
+                "comments": 100
+            }
+        ],
+        "no-trailing-spaces": 2
     }
 }
