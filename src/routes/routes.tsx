@@ -7,10 +7,12 @@ const routes = (): ReactElement => {
         <Suspense fallback={<div>...Loading</div>}>
             <Switch>
                 <>
-                    <Route exact path='/'><Redirect to={route_path.home.index} /></Route>
-                    {
-                        routeProps.map(props => (<Route {...props} key={props.path} />))
-                    }
+                    <Route exact path="/">
+                        <Redirect to={route_path.home.index} />
+                    </Route>
+                    {routeProps.map((props) => (
+                        <Route {...props} key={props.path} />
+                    ))}
                 </>
             </Switch>
         </Suspense>
@@ -18,4 +20,3 @@ const routes = (): ReactElement => {
 };
 
 export default routes;
-

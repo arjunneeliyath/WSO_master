@@ -9,7 +9,7 @@ const inputSetup = () => {
     return {
         input,
         btn,
-        ...utils
+        ...utils,
     };
 };
 
