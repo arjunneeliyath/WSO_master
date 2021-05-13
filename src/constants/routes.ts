@@ -2,11 +2,11 @@ import { lazy } from 'react';
 
 export const route_path = {
     home: {
-        index: '/home'
+        index: '/home',
     },
     demo: {
         index: '/demo',
-    }
+    },
 };
 
 const routeProps = [
@@ -21,7 +21,7 @@ const routeProps = [
         path: route_path.demo.index,
         component: lazy(() => import('../pages/demo')),
         exact: true,
-    }
+    },
 ];
 
 export default routeProps;
