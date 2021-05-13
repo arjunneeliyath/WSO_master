@@ -5,6 +5,7 @@ import Button from '../components/button/button';
 
 const Demo = (): ReactElement => {
   const [inputVal, setInputVal] = useState('');
+  var aaa=6;
 
   const onButtonClick = () => {
     setInputVal('');

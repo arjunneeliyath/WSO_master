@@ -15,4 +15,4 @@ export default (): ReactElement => {
             </Switch>
         </Suspense>
     )
-}
+};

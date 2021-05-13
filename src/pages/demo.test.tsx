@@ -15,7 +15,7 @@ const inputSetup = () => {
 
 it("checkButtonAndInputRender", () => {
     const { input, btn } = inputSetup();
-    expect(input).toBeTruthy();
+    expect(input).toBeFalsy();
     expect(btn).toBeTruthy();
 });
 
