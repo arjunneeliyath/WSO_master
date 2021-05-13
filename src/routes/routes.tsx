@@ -18,3 +18,4 @@ const routes = (): ReactElement => {
 };
 
 export default routes;
+

@@ -27,12 +27,6 @@
     "lint": "eslint \"**/*.{ts,tsx}\"",
     "prettier:check": "prettier --config .prettierrc --check \"src/**/*.{ts,tsx,css,html}\""
   },
-  "lint-staged": {
-    "src/**/*.{ts,tsx,css,html,json}": [
-      "eslint . --fix",
-      "git add"
-    ]
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
@@ -43,6 +37,11 @@
     "extends": [
       "react-app",
       "react-app/jest"
+    ]
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx,css,html,json}": [
+      "npm run prettier:check"
     ]
   },
   "browserslist": {
