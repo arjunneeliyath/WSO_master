@@ -23,12 +23,13 @@
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
-        "test": "env-cmd -f ./.husky/.config react-scripts test",
+        "test": "react-scripts test",
         "eject": "react-scripts eject",
         "lint": "eslint \"**/*.{ts,tsx}\"",
         "prettier": "prettier --write \"src/**/*.{ts,tsx,css,html}\"",
         "prettier:check": "prettier --config .prettierrc --check \"src/**/*.{ts,tsx,css,html}\"",
         "husky": "lint-staged & npm run prettier & npm run prettier:check",
+        "husky-test": "env-cmd -f ./.husky/.config react-scripts test",
         "prepare": "husky install"
     },
     "eslintConfig": {
