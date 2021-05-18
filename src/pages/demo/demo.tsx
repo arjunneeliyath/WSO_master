@@ -8,6 +8,7 @@ const Demo = (): ReactElement => {
     const [myArray, setMyArray] = useState(['']);
     const onButtonClick = () => {
         setMyArray([...myArray, inputVal]);
+        setInputVal('');
     };
     return (
         <ErrorBoundary>
