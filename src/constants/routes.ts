@@ -7,6 +7,9 @@ export const route_path = {
     demo: {
         index: '/demo',
     },
+    error: {
+        index: '/error',
+    },
 };
 
 const routeProps = [
@@ -19,7 +22,13 @@ const routeProps = [
     {
         title: 'Demo',
         path: route_path.demo.index,
-        component: lazy(() => import('../pages/demo')),
+        component: lazy(() => import('../pages/demo/demo')),
+        exact: true,
+    },
+    {
+        title: 'Error',
+        path: route_path.error.index,
+        component: lazy(() => import('../components/errorboundary/error')),
         exact: true,
     },
 ];
