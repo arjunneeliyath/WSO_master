@@ -1,8 +1,8 @@
 import React, { ReactElement } from 'react';
-import './App.css';
+import './styles.css';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Routes from './routes/routes';
-import ErrorBoundary from './components/errorboundary/ErrorBoundary';
+import ErrorBoundary from '../error-boundary/error-boundary';
+import Routes from '../route/route';
 
 const App = (): ReactElement => (
     <div className="App">

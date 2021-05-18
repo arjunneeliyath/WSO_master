@@ -1,9 +1,6 @@
 import { lazy } from 'react';
 
-export const route_path = {
-    home: {
-        index: '/home',
-    },
+export const routePath = {
     demo: {
         index: '/demo',
     },
@@ -12,25 +9,19 @@ export const route_path = {
     },
 };
 
-const routeProps = [
-    {
-        title: 'Home',
-        path: route_path.home.index,
-        component: lazy(() => import('../pages/home')),
-        exact: true,
-    },
+const routes = [
     {
         title: 'Demo',
-        path: route_path.demo.index,
+        path: routePath.demo.index,
         component: lazy(() => import('../pages/demo/demo')),
         exact: true,
     },
     {
         title: 'Error',
-        path: route_path.error.index,
-        component: lazy(() => import('../components/errorboundary/error')),
+        path: routePath.error.index,
+        component: lazy(() => import('../components/error-boundary/error')),
         exact: true,
     },
 ];
 
-export default routeProps;
+export default routes;

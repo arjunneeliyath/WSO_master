@@ -1,6 +1,6 @@
 import React, { Component, ErrorInfo, ReactNode } from 'react';
 import { Redirect } from 'react-router-dom';
-import { route_path } from '../../constants/routes';
+import { routePath } from '../../constants/routes';
 
 interface Props {
     children: ReactNode;
@@ -14,14 +14,14 @@ interface State {
 class ErrorBoundary extends Component<Props, State> {
     constructor(props: Props) {
         super(props);
-        this.state = { error: undefined, errorInfo: undefined };
+        this.state = {};
     }
 
     redirectToError = (): JSX.Element => {
         return (
             <Redirect
                 to={{
-                    pathname: route_path.error.index,
+                    pathname: routePath.error.index,
                     state: { error: this.state.error, errorInfo: this.state.errorInfo },
                 }}
             />

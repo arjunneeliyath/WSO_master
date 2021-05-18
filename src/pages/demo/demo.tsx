@@ -1,33 +1,31 @@
-import React, { ReactElement, useState } from 'react';
-import '../../App.css';
+import React from 'react';
+import { connect } from 'react-redux';
+import { AnyAction, Dispatch } from 'redux';
 import Button from '../../components/button/button';
-import ErrorBoundary from '../../components/errorboundary/ErrorBoundary';
+import { getStatusAction, IStatusReducer } from '../../modules/status';
+import { IReduxState } from '../../modules/store';
 
-const Demo = (): ReactElement => {
-    const [inputVal, setInputVal] = useState('');
-    const [myArray, setMyArray] = useState(['']);
-    const onButtonClick = () => {
-        setMyArray([...myArray, inputVal]);
-        setInputVal('');
-    };
+interface IStatusProps {
+    getStatus: () => void;
+    status: IStatusReducer;
+}
+
+const status = (props: IStatusProps) => {
+    const { getStatus, status } = props;
     return (
-        <ErrorBoundary>
-            <div className="App" data-testid="AppId">
-                <header className="App-header">
-                    <h1>Welcome WSO Demo Page</h1>
-                    <input
-                        placeholder="Type Something"
-                        value={inputVal}
-                        data-testid="input-id"
-                        onChange={(e) => setInputVal(e.target.value)}
-                    />
-                    <Button data-testid="button-id" key="buttonKey" value="Reset" onClick={onButtonClick}></Button>
-                    {myArray.map((x) => {
-                        return x;
-                    })}
-                </header>
-            </div>
-        </ErrorBoundary>
+        <div>
+            <Button key="Button" value="Click to get Status" onClick={getStatus} />
+            <div>{`Version: ${status.version}`}</div>
+            <div>{`Status: ${status.apiStatus}`}</div>
+        </div>
     );
 };
-export default Demo;
+
+const mapStateToProps = (state: IReduxState) => ({ status: state.status });
+const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) => ({
+    getStatus: () => dispatch(getStatusAction()),
+});
+
+const statusPage = connect(mapStateToProps, mapDispatchToProps)(status);
+
+export default statusPage;
